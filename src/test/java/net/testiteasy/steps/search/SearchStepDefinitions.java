@@ -11,8 +11,18 @@ public class SearchStepDefinitions {
 
     private final SearchScreen searchScreen = SearchScreenObjectFactory.get();
 
-    @When("user type in search line {string}")
-    public void userTypeInSearchLine(String searchInput) {
+    @When("user types in Search field {string} text")
+    public void userTypeInSearchField(final String searchInput) {
+        searchScreen.fillOutSearchField(searchInput);
+    }
 
+    @When("user can see suggestion text")
+    public void userCanSeeSearchSuggestion() {
+            searchScreen.waitForSearchSuggestion();
+    }
+
+    @When("user scroll to view with {string} and click")
+    public void userScrollToView(final String text) {
+        searchScreen.scrollIntoViewWithTextAndClick(text);
     }
 }

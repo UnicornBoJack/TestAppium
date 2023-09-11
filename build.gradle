@@ -21,6 +21,7 @@ def cucumberVersion = '7.12.1'
 def logbackVersion = '1.4.7'
 def junitJupiterVersion = '5.9.3'
 def junitPlatformVersion = '1.9.3'
+def testNg = '7.7.0'
 
 group = "$projectGroup"
 version = "$projectVersion"
@@ -37,6 +38,8 @@ repositories {
 }
 
 dependencies {
+    testImplementation "org.testng:testng:$testNg"
+
     implementation "org.jetbrains:annotations:$jetbrainsAnnotationVersion"
 
     implementation "org.aeonbits.owner:owner:$aeonbitsVersion"
@@ -47,7 +50,7 @@ dependencies {
     testImplementation "io.rest-assured:rest-assured-all:$restAssuredVersion"
 
     testImplementation "com.codeborne:selenide-appium:$selenideAppiumVersion"
-    testImplementation "io.appium:java-client:$appiumJavaVersion"
+    implementation "io.appium:java-client:$appiumJavaVersion"
 
     testImplementation "io.cucumber:cucumber-junit:$cucumberVersion"
     testImplementation "io.cucumber:cucumber-java:$cucumberVersion"

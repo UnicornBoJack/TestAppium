@@ -7,6 +7,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import net.testiteasy.annotations.Step;
 import org.jetbrains.annotations.NotNull;
+import org.openqa.selenium.ScreenOrientation;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -52,6 +53,8 @@ public class AppiumLocalDriver {
 
             UiAutomator2Options options = new UiAutomator2Options();
 
+//            options.setOrientation(ScreenOrientation.LANDSCAPE);
+
             options.setAppPackage(testConfig().getAppPackage());
             options.setAppActivity(testConfig().getAppActivity());
 
@@ -67,6 +70,8 @@ public class AppiumLocalDriver {
         public XCUITestOptions getIOSCapabilities() {
 
             XCUITestOptions options = new XCUITestOptions();
+
+//            options.setOrientation(ScreenOrientation.LANDSCAPE);
 
             options.setDeviceName(testConfig().getDeviceName());
 

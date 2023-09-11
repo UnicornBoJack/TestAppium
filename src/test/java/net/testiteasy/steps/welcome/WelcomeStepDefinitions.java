@@ -1,11 +1,15 @@
 package net.testiteasy.steps.welcome;
 
+import io.appium.java_client.AppiumDriver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.testiteasy.screens.main.MainScreen;
 import net.testiteasy.screens.main.MainScreenObjectFactory;
+import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WelcomeStepDefinitions {
+    DesiredCapabilities desCapabilities = new DesiredCapabilities();
 
     private final MainScreen mainScreen = MainScreenObjectFactory.get();
 
@@ -23,4 +27,10 @@ public class WelcomeStepDefinitions {
     public void userTypeInSearchLine() {
         mainScreen.clickOnSearchField();
     }
+
+    @Then("rotate device screen to landscape")
+    public void rotateDeviceScreenToLandscape() {
+        desCapabilities.setCapability("orientation", "LANDSCAPE");
+    }
+
 }

@@ -8,4 +8,5 @@ Feature: Wikipedia welcome screen
   Scenario: Open application on the welcome screen
     Given user open application
     When welcome screen ready
+    When rotate device screen to landscape
     Then user can see Explore icon
